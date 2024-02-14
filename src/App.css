@@ -1,9 +1,42 @@
 .App {
-  background-color: black;
-  color: #fafafa;
+  background-color: #232323;
+  color: #cccccc;
   height: 100vh;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.display-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* text alignment */
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+/* margin */
+.m-1 {
+  margin: 1rem;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
