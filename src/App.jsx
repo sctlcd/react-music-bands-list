@@ -15,8 +15,14 @@ function App() {
     itemName.current.focus();
   }, []);
 
+  function handleEdit(index) {
+    setCurrentIndex(index);
+    const { itemName } = items[index];
+    setnewItemName(itemName);
+  }
+
   function handleDelete(index) {
-    window.confirm("Are you sure you want to delete this music band?") &&
+    window.confirm("Are you sure you want to this band?") &&
       setItems(items.filter((item, i) => i !== index));
   };
 
@@ -26,10 +32,10 @@ function App() {
 
   function handleSubmit (event) {
     event.preventDefault();
-    // If item exists then update items array  if not add item to the items array
+    // If item exists then update items array if not add item to the items array
     if (currentIndex >= 0) {
       const updatedItems = [...items];
-      updatedItems[currentIndex] = { item: newItemName };
+      updatedItems[currentIndex] = { itemName: newItemName };
       setItems(updatedItems);
       setCurrentIndex(-1);
     } else {
@@ -86,6 +92,7 @@ function App() {
             <div>
               <button 
                 style={{ border: "1px solid #595959", backgroundColor: "#595959", margin: "0 0.5rem" }}
+                onClick={() => handleEdit(index)}
               >
                 Edit
               </button>
