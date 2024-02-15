@@ -83,7 +83,7 @@ function App() {
             type="submit"
             style={{ border: "1px solid #E5B80B", backgroundColor: "#E5B80B" }}
           >
-            Save
+            { currentIndex >= 0 ? "Update" : "Add" }
           </button>
         </form> 
 
@@ -93,21 +93,23 @@ function App() {
               key={index}
               className='display-flex m-1 space-between'
             >
-              {item.itemName} seen {item.numberOfTimes} {item.numberOfTimes > 1 ? "times" : "time"}
-            <div>
-              <button 
-                style={{ border: "1px solid #595959", backgroundColor: "#595959", margin: "0 0.5rem" }}
-                onClick={() => handleEdit(index)}
-              >
-                Edit
-              </button>
-              <button 
-                style={{ border: "1px solid #A11713", backgroundColor: "#A11713" }}
-                onClick={() => handleDelete(index)}
-              >
-                Delete
-              </button>
-              <br />
+              <div>
+                <span style={{ fontWeight: "bold" }}>{item.itemName}</span> 
+                <span> seen {item.numberOfTimes} {item.numberOfTimes > 1 ? "times" : "time"}</span>
+              </div>
+              <div>
+                <button 
+                  style={{ border: "1px solid #595959", backgroundColor: "#595959", margin: "0 0.5rem" }}
+                  onClick={() => handleEdit(index)}
+                >
+                  Edit
+                </button>
+                <button 
+                  style={{ border: "1px solid #A11713", backgroundColor: "#A11713" }}
+                  onClick={() => handleDelete(index)}
+                >
+                  Delete
+                </button>
             </div>
           </li>
           ))}
