@@ -67,6 +67,7 @@ function App() {
               ref={itemName}
               value={newItemName}
               onChange={handleItemChange}
+              type="text"
             />
           </div>
           <div className='m-1'>
@@ -77,6 +78,7 @@ function App() {
               ref={numberOfTimes}
               value={newNumberOfTimes}
               onChange={handleNumberOfTimes}
+              type='number'
             />
           </div>
           <button 
