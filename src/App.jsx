@@ -15,9 +15,14 @@ function App() {
     itemName.current.focus();
   }, []);
 
+  function handleDelete(index) {
+    window.confirm("Are you sure you want to delete this music band?") &&
+      setItems(items.filter((item, i) => i !== index));
+  };
+
   function handleItemChange (event) {
     setnewItemName(event.target.value);
-  }
+  };
 
   function handleSubmit (event) {
     event.preventDefault();
@@ -86,6 +91,7 @@ function App() {
               </button>
               <button 
                 style={{ border: "1px solid #A11713", backgroundColor: "#A11713" }}
+                onClick={() => handleDelete(index)}
               >
                 Delete
               </button>
