@@ -57,13 +57,12 @@ function App() {
   return (
     <div className="App">
       <div className='container'>
-        <h1 className='text-center'>Music bands list</h1>
+        <h1 className='text-center mb-3'>Music bands list</h1>
         <form className='display-flex' style={{ justifyContent: "center" }} onSubmit={handleSubmit} >
           <div className='m-1'>
             <input 
               name="name"
               placeholder="music band name"
-              style={{ border: "1px solid #E5B80B" }}
               ref={itemName}
               value={newItemName}
               onChange={handleItemChange}
@@ -74,7 +73,6 @@ function App() {
             <input 
               name="number"
               placeholder="number of times"
-              style={{ border: "1px solid #E5B80B" }}
               ref={numberOfTimes}
               value={newNumberOfTimes}
               onChange={handleNumberOfTimes}
@@ -83,7 +81,6 @@ function App() {
           </div>
           <button 
             type="submit"
-            style={{ border: "1px solid #E5B80B", backgroundColor: "#E5B80B" }}
             className='btn btn-primary'
           >
             { currentIndex >= 0 ? "Update" : "Add" }
@@ -110,6 +107,7 @@ function App() {
                 <button 
                   onClick={() => handleDelete(index)}
                   className='btn btn-delete'
+                  icon="fa-solid fa-arrow-right-to-bracket"
                 >
                   Delete
                 </button>
