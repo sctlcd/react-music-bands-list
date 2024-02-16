@@ -57,33 +57,33 @@ function App() {
   return (
     <div className="App">
       <div className='container'>
-        <h1 className='text-center'>Music bands list</h1>
+        <h1 className='text-center mb-3'>Music bands list</h1>
         <form className='display-flex' style={{ justifyContent: "center" }} onSubmit={handleSubmit} >
           <div className='m-1'>
             <input 
               name="name"
               placeholder="music band name"
-              style={{ border: "1px solid #E5B80B" }}
               ref={itemName}
               value={newItemName}
               onChange={handleItemChange}
+              type="text"
             />
           </div>
           <div className='m-1'>
             <input 
               name="number"
               placeholder="number of times"
-              style={{ border: "1px solid #E5B80B" }}
               ref={numberOfTimes}
               value={newNumberOfTimes}
               onChange={handleNumberOfTimes}
+              type='number'
             />
           </div>
           <button 
             type="submit"
-            style={{ border: "1px solid #E5B80B", backgroundColor: "#E5B80B" }}
+            className='btn btn-primary'
           >
-            Save
+            { currentIndex >= 0 ? "Update" : "Add" }
           </button>
         </form> 
 
@@ -93,21 +93,24 @@ function App() {
               key={index}
               className='display-flex m-1 space-between'
             >
-              {item.itemName} seen {item.numberOfTimes} {item.numberOfTimes > 1 ? "times" : "time"}
-            <div>
-              <button 
-                style={{ border: "1px solid #595959", backgroundColor: "#595959", margin: "0 0.5rem" }}
-                onClick={() => handleEdit(index)}
-              >
-                Edit
-              </button>
-              <button 
-                style={{ border: "1px solid #A11713", backgroundColor: "#A11713" }}
-                onClick={() => handleDelete(index)}
-              >
-                Delete
-              </button>
-              <br />
+              <div>
+                <span className='bold'>{item.itemName}</span> 
+                <span className='small'> seen {item.numberOfTimes} {item.numberOfTimes > 1 ? "times" : "time"}</span>
+              </div>
+              <div>
+                <button 
+                  onClick={() => handleEdit(index)}
+                  className='btn btn-edit'
+                >
+                  Edit
+                </button>
+                <button 
+                  onClick={() => handleDelete(index)}
+                  className='btn btn-delete'
+                  icon="fa-solid fa-arrow-right-to-bracket"
+                >
+                  Delete
+                </button>
             </div>
           </li>
           ))}
