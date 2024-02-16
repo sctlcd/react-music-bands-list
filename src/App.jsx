@@ -72,27 +72,29 @@ function App() {
               required
             />
           </div>
-          <div className='m-1'>
-            <input 
-              id="numberOfTimes"
-              name="numberOfTimes"
-              placeholder="times"
-              ref={numberOfTimes}
-              value={newNumberOfTimes}
-              onChange={handleNumberOfTimes}
-              type='number'
-              min="0"
-              max="50"
-              step="1"
-              required
-            />
+          <div className='parent'>
+            <div className='child'>
+              <input 
+                id="numberOfTimes"
+                name="numberOfTimes"
+                placeholder="times"
+                ref={numberOfTimes}
+                value={newNumberOfTimes}
+                onChange={handleNumberOfTimes}
+                type='number'
+                min="1"
+                max="50"
+                step="1"
+                required
+              />
+            </div>
+            <button 
+              type="submit"
+              className='btn btn-primary child'
+            >
+              { currentIndex >= 0 ? "Update" : "Add" }
+            </button>
           </div>
-          <button 
-            type="submit"
-            className='btn btn-primary'
-          >
-            { currentIndex >= 0 ? "Update" : "Add" }
-          </button>
         </form> 
 
         <ul className='container text-left'>
