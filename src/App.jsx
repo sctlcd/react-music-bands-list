@@ -57,62 +57,75 @@ function App() {
   return (
     <div className="App">
       <div className='container'>
-        <h1 className='text-center mb-3'>Music bands list</h1>
-        <form className='display-flex' style={{ justifyContent: "center" }} onSubmit={handleSubmit} >
+        <h1 className='text-center mb-3 uppercase'>Music bands list</h1>
+        <form className='display-flex mb-2' style={{ justifyContent: "center" }} onSubmit={handleSubmit} >
           <div className='m-1'>
             <input 
+              id="name"
               name="name"
-              placeholder="music band name"
+              placeholder="music band name seen"
               ref={itemName}
               value={newItemName}
               onChange={handleItemChange}
               type="text"
+              size="30"
+              required
             />
           </div>
-          <div className='m-1'>
-            <input 
-              name="number"
-              placeholder="number of times"
-              ref={numberOfTimes}
-              value={newNumberOfTimes}
-              onChange={handleNumberOfTimes}
-              type='number'
-            />
+          <div className='parent'>
+            <div className='child'>
+              <input 
+                id="numberOfTimes"
+                name="numberOfTimes"
+                placeholder="times"
+                ref={numberOfTimes}
+                value={newNumberOfTimes}
+                onChange={handleNumberOfTimes}
+                type='number'
+                min="1"
+                max="50"
+                step="1"
+                required
+              />
+            </div>
+            <button 
+              type="submit"
+              className='btn btn-primary child'
+            >
+              { currentIndex >= 0 ? "Update" : "Add" }
+            </button>
           </div>
-          <button 
-            type="submit"
-            className='btn btn-primary'
-          >
-            { currentIndex >= 0 ? "Update" : "Add" }
-          </button>
         </form> 
 
         <ul className='container text-left'>
           {items.map((item, index) => (
-            <li 
+            <>
+            <li
               key={index}
-              className='display-flex m-1 space-between'
+              className='display-flex m-075 space-between'
             >
               <div>
-                <span className='bold'>{item.itemName}</span> 
+                <span className='bold'>{item.itemName}</span>
                 <span className='small'> seen {item.numberOfTimes} {item.numberOfTimes > 1 ? "times" : "time"}</span>
               </div>
-              <div>
-                <button 
+              <div className='ml-1'>
+                <button
                   onClick={() => handleEdit(index)}
                   className='btn btn-edit'
                 >
                   Edit
                 </button>
-                <button 
+                <button
                   onClick={() => handleDelete(index)}
                   className='btn btn-delete'
                   icon="fa-solid fa-arrow-right-to-bracket"
                 >
                   Delete
                 </button>
-            </div>
-          </li>
+              </div>
+            </li>
+            <hr />
+            </>
           ))}
         </ul>
       </div>
