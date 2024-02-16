@@ -63,7 +63,7 @@ function App() {
             <input 
               id="name"
               name="name"
-              placeholder="music band name"
+              placeholder="music band name seen"
               ref={itemName}
               value={newItemName}
               onChange={handleItemChange}
@@ -74,15 +74,15 @@ function App() {
           </div>
           <div className='m-1'>
             <input 
-              id="number"
-              name="number"
-              placeholder="number"
+              id="numberOfTimes"
+              name="numberOfTimes"
+              placeholder="times"
               ref={numberOfTimes}
               value={newNumberOfTimes}
               onChange={handleNumberOfTimes}
               type='number'
               min="0"
-              maw="50"
+              max="50"
               step="1"
               required
             />

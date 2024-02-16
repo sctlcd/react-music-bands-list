@@ -76,6 +76,10 @@
 .btn-primary {
   background-color: #e7ba03;
   margin: 1rem;
+  line-height: 2rem;
+  padding: 0rem 1rem;
+  border: 1px solid #E5B80B;
+  font-size: 1rem;
 }
 
 .btn-edit {
@@ -98,6 +102,7 @@
 
 .btn-primary:hover {
   background: #eaca4b;
+  border: 1px solid #eaca4b;
 }
 
 .btn-delete:hover {
@@ -130,19 +135,21 @@ ul {
 
 /* inputs */
 input::placeholder {
-  font-size: 0.7rem;
+  font-size: 1rem;
   color: rgb(118, 115, 115);
-  padding-left: 0.2rem;
+  /* padding-left: 0.2rem; */
 }
 
 input[type="text"],
 input[type="number"] {
   background-color: #232323;
+  padding-left: 1rem;
 }
 
 input {
   border: 1px solid #E5B80B;
   color: #cccccc;
+  line-height: 2rem;
 }
 
 hr {
@@ -155,7 +162,7 @@ hr {
 }
 
 #number {
-  width: 4.4em;
+  width: 4.6rem;
 }
 
 /************************************************************************* Media queries *******************/
