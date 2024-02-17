@@ -1,7 +1,9 @@
 # [react-music-bands-list](https://react-music-bands-list.web.app/)
 
 <br />
-<img src="https://github.com/sctlcd/react-music-bands-list/blob/main/design/react-music-bands-list-preview.png" alt="react-music-bands-list" width="800">
+<img src="https://github.com/sctlcd/react-music-bands-list/blob/main/design/react-music-bands-list-preview.png" alt="react-music-bands-list-preview" width="800">
+<br />
+<img src="https://github.com/sctlcd/react-music-bands-list/blob/main/design/react-music-bands-list-zoom.png" alt="react-music-bands-list-zoom" width="800">
 <br />
 
 ---
@@ -177,7 +179,6 @@ Back to [top](#tableOfContents)
 ### Media <a name="media"></a>
 
 - [favicon.ico](https://www.flaticon.com/free-icon/band_1753311?term=live+music&page=1&position=15&origin=search&related_id=1753311) - [Flaticon](https://www.flaticon.com/) | copyright [Flat Icons](https://flat-icons.com/)
-- []() - []() | copyright []()
 
 Back to [top](#tableOfContents)
 
