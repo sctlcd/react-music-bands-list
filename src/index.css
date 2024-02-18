@@ -1,6 +1,10 @@
+html {
+  background-color: #232323;
+}
+
 body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  /* overflow: hidden; */ /* remove any type of scrolling even on touch screens */
+  overflow: hidden; /* remove any type of scrolling even on touch screens */
 }
